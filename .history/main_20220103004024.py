@@ -31,11 +31,19 @@ from PIL import Image
 import time
 ```
 
-
-## プログレスバーの表示
+## 写真の埋め込み
 """
 
-'何の写真が出るでしょう？'
+img = Image.open('picture.jpeg')
+st.image(img, caption='Syuriken dojo', use_column_width=True)
+
+
+
+"""
+### プログレスバーの表示
+"""
+
+'Start!!'
 
 latest_iteration = st.empty()
 bar = st.progress(0)
@@ -47,12 +55,7 @@ for i in range(100):
 
 'Done!!!'
 
-"""
-### 写真の埋め込み
-"""
 
-img = Image.open('picture.jpeg')
-st.image(img, caption='Syuriken dojo', use_column_width=True)
 
 
 

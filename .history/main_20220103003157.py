@@ -31,28 +31,29 @@ from PIL import Image
 import time
 ```
 
-
-## プログレスバーの表示
+## 写真の埋め込み
 """
+if st.checkbox('Show Image'):
+img = Image.open('picture.jpeg')
+st.image(img, caption='Ninja', use_column_width=True)
 
-'何の写真が出るでしょう？'
 
+
+"""
+### プログレスバーの表示
+"""
+'Start!!'
 latest_iteration = st.empty()
-bar = st.progress(0)
+bar = st.progress(10)
 
-for i in range(100):
+for i in range(20):
           latest_iteration.text(f'Iteration {i+1}')
           bar.progress(i+1)
           time.sleep(0.1)
 
 'Done!!!'
 
-"""
-### 写真の埋め込み
-"""
 
-img = Image.open('picture.jpeg')
-st.image(img, caption='Syuriken dojo', use_column_width=True)
 
 
 
